@@ -1,0 +1,32 @@
+<!--pages/home/home.wxml-->
+<view class="navbar">
+<text wx:for="{{navbar}}" data-idx="{{index}}"  class="item {{ currentTab==index ? 'active':''}}" bindtap='navsbarTap' > {{item}}</text>
+</view>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+<view class="navs">
+  <block wx:for="{{navItems}}" wx:key="name">
+      <view class="nav-item" catchtap="catchTapCategory" data-type="{{item.name}}" data-typeid="{{data.typeId}}">
+          <image class='nav-image' src="{{item.imageurl}}" />
+          <text>{{item.name}}</text>
+      </view>
+  </block>
+</view>
+
+<view class="separate"></view>
+
+ <view class="cate-container">
+    <view class="category-title">
+      <text class="name">新品上架</text>
+      <view class="line_flag"></view>
+      <image class="head-img" src="{{newgoods_head_url}}"></image>    
+    </view>
+ </view>
+ 
+
+ 
